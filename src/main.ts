@@ -24,7 +24,7 @@ async function download(version: string, osPlat: string): Promise<string> {
   const downloadPath = await tc.downloadTool(url);
 
   info(`Downloading  ${url}`);
-  return await tc.cacheDir(await downloadPath, TOOL, version);
+  return await tc.cacheFile(await downloadPath, "copilot", TOOL, version);
 }
 
 export function fileName(version: string, osPlat: string): string {
