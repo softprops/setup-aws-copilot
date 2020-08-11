@@ -1,0 +1,51 @@
+{
+  "name": "setup-aws-copilot",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub Action for setting up the AWS Copilot cli",
+  "main": "lib/main.js",
+  "scripts": {
+    "build": "npx ncc build src/main.ts --minify",
+    "buildcheck": "npx tsc --noEmit -p .",
+    "test": "npx jest --coverage",
+    "fmt": "npx prettier --write 'src/**/*.ts' '__tests__/**/*.ts'",
+    "fmtcheck": "npx prettier --check 'src/**/*.ts' '__tests__/**/*.ts'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/softprops/setup-aws-copilot.git"
+  },
+  "keywords": [
+    "actions"
+  ],
+  "author": "softprops",
+  "license": "MIT",
+  "dependencies": {
+    "@actions/core": "^1.2.4",
+    "@actions/exec": "^1.0.4",
+    "@actions/tool-cache": "^1.3.5",
+    "@actions/http-client": "^1.0.8"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.2",
+    "@types/node": "^14.0.1",
+    "@zeit/ncc": "^0.22.1",
+    "husky": "^4.2.5",
+    "jest": "^26.0.1",
+    "jest-circus": "^26.0.1",
+    "lint-staged": "^10.2.2",
+    "prettier": "2.0.5",
+    "ts-jest": "^26.0.0",
+    "typescript": "^3.9.2"
+  },
+  "lint-staged": {
+    "{__tests__,src}/**/*.ts": [
+      "npm run fmt"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
