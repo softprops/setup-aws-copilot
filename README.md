@@ -24,4 +24,4 @@ jobs:
 | `version`      | string  | version of [Copilot cli release](https://github.com/aws/copilot-cli/releases) defaults to latest version                |
 
 
-Doug Tangren (softprops) 2020
+Doug Tangren (softprops) 2020.
