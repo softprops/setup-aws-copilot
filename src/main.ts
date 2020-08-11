@@ -22,13 +22,9 @@ export function downloadUrl(version: string, osPlat: string): string {
 async function download(version: string, osPlat: string): Promise<string> {
   const url = downloadUrl(version, osPlat);
   const downloadPath = await tc.downloadTool(url);
-  const extPath =
-    osPlat == "win32"
-      ? tc.extractZip(downloadPath)
-      : tc.extractTar(downloadPath);
 
-  info(`Downloading and extracting ${url}`);
-  return await tc.cacheDir(await extPath, TOOL, version);
+  info(`Downloading  ${url}`);
+  return await tc.cacheDir(await downloadPath, TOOL, version);
 }
 
 export function fileName(version: string, osPlat: string): string {
