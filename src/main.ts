@@ -3,6 +3,7 @@ import * as exec from "@actions/exec";
 import * as tc from "@actions/tool-cache";
 import * as http from "@actions/http-client";
 import * as os from "os";
+import * as fs from "fs";
 
 const TOOL = "aws-copilot";
 
@@ -21,10 +22,10 @@ export function downloadUrl(version: string, osPlat: string): string {
 
 async function download(version: string, osPlat: string): Promise<string> {
   const url = downloadUrl(version, osPlat);
-  const downloadPath = await tc.downloadTool(url);
-
   info(`Downloading  ${url}`);
-  return await tc.cacheFile(await downloadPath, "copilot", TOOL, version);
+  const downloadPath = await tc.downloadTool(url);
+  fs.chmodSync(downloadPath, "777");
+  return await tc.cacheFile(downloadPath, "copilot", TOOL, version);
 }
 
 export function fileName(version: string, osPlat: string): string {
