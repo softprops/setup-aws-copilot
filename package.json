@@ -21,10 +21,10 @@
   "author": "softprops",
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^1.2.6",
-    "@actions/exec": "^1.0.4",
-    "@actions/http-client": "^1.0.9",
-    "@actions/tool-cache": "^1.6.1"
+    "@actions/core": "^1.4.0",
+    "@actions/exec": "^1.1.0",
+    "@actions/http-client": "^1.0.11",
+    "@actions/tool-cache": "^1.7.1"
   },
   "devDependencies": {
     "@types/jest": "^25.2.3",
