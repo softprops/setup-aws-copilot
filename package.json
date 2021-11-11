@@ -9,7 +9,8 @@
     "buildcheck": "tsc --noEmit -p .",
     "test": "jest --coverage",
     "fmt": "prettier --write 'src/**/*.ts' '__tests__/**/*.ts'",
-    "fmtcheck": "prettier --check 'src/**/*.ts' '__tests__/**/*.ts'"
+    "fmtcheck": "prettier --check 'src/**/*.ts' '__tests__/**/*.ts'",
+    "lint-staged": "lint-staged"
   },
   "repository": {
     "type": "git",
@@ -42,10 +43,5 @@
     "{__tests__,src}/**/*.ts": [
       "npm run fmt"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   }
 }
