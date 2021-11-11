@@ -24,7 +24,7 @@ async function download(version: string, osPlat: string): Promise<string> {
   const url = downloadUrl(version, osPlat);
   info(`Downloading  ${url}`);
   const downloadPath = await tc.downloadTool(url);
-  fs.chmodSync(downloadPath, "777");
+  fs.chmodSync(downloadPath, "755");
   return await tc.cacheFile(downloadPath, "copilot", TOOL, version);
 }
 
