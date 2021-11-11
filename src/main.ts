@@ -44,7 +44,7 @@ async function run() {
 
     await install(version, os.platform());
   } catch (error) {
-    setFailed(error.message);
+    setFailed(error instanceof Error ? error.message : "Unknown error");
   }
 }
 
