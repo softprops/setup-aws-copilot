@@ -1,15 +1,15 @@
 {
   "name": "setup-aws-copilot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "GitHub Action for setting up the AWS Copilot cli",
   "main": "lib/main.js",
   "scripts": {
-    "build": "npx ncc build src/main.ts --minify",
-    "buildcheck": "npx tsc --noEmit -p .",
-    "test": "npx jest --coverage",
-    "fmt": "npx prettier --write 'src/**/*.ts' '__tests__/**/*.ts'",
-    "fmtcheck": "npx prettier --check 'src/**/*.ts' '__tests__/**/*.ts'"
+    "build": "ncc build src/main.ts --minify",
+    "buildcheck": "tsc --noEmit -p .",
+    "test": "jest --coverage",
+    "fmt": "prettier --write 'src/**/*.ts' '__tests__/**/*.ts'",
+    "fmtcheck": "prettier --check 'src/**/*.ts' '__tests__/**/*.ts'"
   },
   "repository": {
     "type": "git",
@@ -27,16 +27,16 @@
     "@actions/tool-cache": "^1.7.1"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.3",
-    "@types/node": "^14.0.27",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^14.17.33",
     "@zeit/ncc": "^0.22.3",
-    "husky": "^4.2.5",
-    "jest": "^26.3.0",
-    "jest-circus": "^26.3.0",
-    "lint-staged": "^10.2.11",
-    "prettier": "2.0.5",
-    "ts-jest": "^26.1.4",
-    "typescript": "^3.9.7"
+    "husky": "^7.0.4",
+    "jest": "^27.3.0",
+    "jest-circus": "^27.3.0",
+    "lint-staged": "^11.2.6",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.4.4"
   },
   "lint-staged": {
     "{__tests__,src}/**/*.ts": [
