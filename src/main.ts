@@ -37,7 +37,7 @@ export function fileName(version: string, osPlat: string): string {
 
 async function run() {
   try {
-    const version = getInput("version");
+    const version = getInput("version") || (await latestVersion());
     if (!version) {
       throw new Error("Failed to resolve latest version");
     }
@@ -48,6 +48,12 @@ async function run() {
   }
 }
 
+async function latestVersion(): Promise<string | undefined> {
+  const url = `https://api.github.com/repos/aws/copilot-cli/releases/latest`;
+  const client = new http.HttpClient("setup-aws-copilot");
+  const resp = (await client.getJson<{ tag_name: string }>(url)).result;
+  return resp?.tag_name;
+}
 
 if (require.main === module) {
   run();
