@@ -1,6 +1,6 @@
 {
   "name": "setup-aws-copilot",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "description": "GitHub Action for setting up the AWS Copilot cli",
   "main": "lib/main.js",
