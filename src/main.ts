@@ -1,5 +1,4 @@
 import { setFailed, info, addPath, getInput } from "@actions/core";
-import * as exec from "@actions/exec";
 import * as tc from "@actions/tool-cache";
 import * as http from "@actions/http-client";
 import * as os from "os";
