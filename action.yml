@@ -5,7 +5,7 @@ author: 'softprops'
 env:
   'FASTLY_API_TOKEN': 'Fastly API token'
 runs:
-  using: 'node16'
+  using: 'node20'
   main: 'dist/index.js'
 inputs:
   version:
