@@ -1,15 +1,15 @@
 # https://help.github.com/en/articles/metadata-syntax-for-github-actions
-name: 'Setup AWS Copilot'
-description: 'A GitHub Action for setting up and configuring the AWS Copilot command line interface'
-author: 'softprops'
+name: "Setup AWS Copilot"
+description: "A GitHub Action for setting up and configuring the AWS Copilot command line interface"
+author: "softprops"
 env:
-  'FASTLY_API_TOKEN': 'Fastly API token'
+  "FASTLY_API_TOKEN": "Fastly API token"
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: "node20"
+  main: "dist/index.js"
 inputs:
   version:
     description: "Version of cli (defaults to latest version)"
 branding:
-  color: 'green'
-  icon: 'users'
+  color: "green"
+  icon: "users"
